@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -90,10 +90,10 @@
         }
 
         /* Status Colors - Matched to temperature map */
-        .status-strengthened { border-left-color: #28a745; } /* Green: High Protection */
-        .status-stabilized { border-left-color: #ffc107; }  /* Yellow: Financial Erosion/Stabilization */
+        .status-strengthened { border-left-color: #28a745; } /* Green: High Protection/Win */
+        .status-stabilized { border-left-color: #ffc107; }  /* Yellow: Ancillary Regulation/Temporary Hold */
         .status-chip { border-left-color: #fd7e14; }        /* Orange: Structural Erosion/Undue Burden */
-        .status-overturn { border-left-color: #dc3545; }    /* Red: Overturn/Hostility */
+        .status-overturn { border-left-color: #dc3545; }    /* Red: Overturn/Hostility/Major Collapse */
         
         .status-strengthened .time-dot { background-color: #28a745; }
         .status-stabilized .time-dot { background-color: #ffc107; } 
@@ -117,21 +117,56 @@
             }
         }
 
-        /* Custom Styles for the Smooth Gradient Map */
+        /* Custom Styles for the Smooth Gradient Map - VOLATILE & DETAILED */
         .climate-gradient {
             background: linear-gradient(to right,
-                #28a745 0%,      /* Strong Green Start */
-                #28a745 15%,     /* Strong Protection */
-                #ffc107 25%,     /* Transition to Yellow/Financial Erosion */
-                #ffc107 35%,     /* Stabilization/Yellow */
-                #fd7e14 55%,     /* Transition to Orange/Structural Erosion */
-                #fd7e14 75%,     /* Orange/Erosion */
-                #ffc107 85%,     /* Mixed/Brief Defense */
-                #dc3545 90%,     /* Rapid Transition to Red/Collapse */
-                #dc3545 100%     /* Hostile Red End */
+                #28a745 0%,      /* 1965: Strong Green Start (Griswold/Roe) */
+                #28a745 15.0%,   /* Strong Protection ends (Green) */
+                
+                /* 1976-1980: Financial Erosion (Hyde, Maher, Harris) */
+                #dc3545 17.0%,   /* Red Spike 1: Hyde Amendment */
+                #dc3545 19.0%,   /* Red Spike 2: Maher (RED) */
+                #fd7e14 22.0%,   /* Orange: Bellotti (1979) */
+                #fd7e14 25.0%,   /* Orange: Harris */
+
+                /* 1983-1986: Defensive Wins (Akron, Thornburgh) */
+                #28a745 28.0%,   /* Green Spike: Akron */
+                #28a745 31.0%,   /* Green Spike: Thornburgh */
+                
+                /* 1988-1992: Major Structural Erosion (Gag Rule, Webster, Casey) */
+                #dc3545 33.0%,   /* Red Spike 3: Title X Gag Rule */
+                #fd7e14 36.0%,   /* Orange: Webster */
+                #fd7e14 39.0%,   /* Orange: Rust v. Sullivan */
+                #ffc107 42.0%,   /* Yellow Spike: Casey (YELLOW) - Core right survived, but weakened */
+                
+                /* 1993-2006: Obstruction & Incremental Chipping (Bray, FACE, Scheidler, Ayotte) */
+                #fd7e14 45.0%,   /* Orange: Bray */
+                #ffc107 48.0%,   /* Yellow: FACE Act */
+                #28a745 52.0%,   /* Green Spike: Stenberg v. Carhart (2000) */
+                #fd7e14 55.0%,   /* Orange: Scheidler / Ayotte */
+                
+                /* 2007-2014: Gonzales & Contraception Erosion (Gonzales, McCullen, Hobby Lobby) */
+                #ffc107 58.0%,   /* Yellow Spike: Gonzales v. Carhart (YELLOW) - Deference to the state */
+                #fd7e14 62.0%,   /* Orange: McCullen */
+                #dc3545 64.0%,   /* Red Spike 4: Hobby Lobby (RED) - Contraception collapse */
+                
+                /* 2016-2021: Final Death Throes (Hellerstedt, NIFLA, June Med, S.B. 8) */
+                #ffc107 66.0%,   /* Yellow Spike: Hellerstedt (YELLOW) - Temporary access win */
+                #fd7e14 69.0%,   /* Orange: NIFLA (2018) */
+                #ffc107 72.0%,   /* Yellow: Box v. PP (2019) */
+                #fd7e14 74.0%,   /* Orange: Little Sisters (2020) */
+                #ffc107 76.0%,   /* Yellow: June Medical (Fractured Hold) */
+                #dc3545 80.0%,   /* Deep Red: Whole Woman’s Health v. Jackson (S.B. 8) */
+                
+                /* 2022+: Collapse and Post-Roe Defense */
+                #dc3545 82.0%,   /* Total Collapse: Dobbs v. Jackson */
+                #28a745 85.0%,   /* Green Spike: DOJ Comstock Opinion */
+                #ffc107 88.0%,   /* Yellow Spike: Hippocratic Medicine (YELLOW) - Access win/stabilization */
+                #fd7e14 90.0%,   /* Orange Spike: Moyle v. US (EMTALA) (ORANGE) - Structural chip/temporary defense */
+                #dc3545 93.0%,   /* Post-Roe Hostility (RED) */
+                #dc3545 100%
             );
         }
-        .w-17 { width: 17%; } .w-8 { width: 8%; } .w-15 { width: 15%; } .w-30 { width: 30%; } .w-7 { width: 7%; }
     </style>
 </head>
 <body class="antialiased">
@@ -140,7 +175,7 @@
 
         <header class="text-center mb-16">
             <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-4">From Hope to Hostility: A 60-Year Legal Shift in Abortion Access</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-cyan-200">A detailed legal chronology of key court cases, federal regulations and other events that shaped, eroded, and ultimately overturned one's Constitutional right to abortion care.</p>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-cyan-200">A detailed legal chronology of **37 key court cases, federal regulations, and legislative actions** that shaped, eroded, and ultimately overturned one's Constitutional right to abortion care.</p>
         </header>
 
 <div class="text-right">©2025 Brigette Supernova</div>
@@ -156,11 +191,11 @@
                     </div>
                     <!-- Year Markers (Positioned to align with key shifts) -->
                     <div class="flex w-full max-w-4xl justify-between mt-2 text-xs sm:text-sm text-cyan-300 font-semibold">
-                        <span class="text-left w-1/5">1965: High Protection</span>
-                        <span class="text-center w-1/5">1977: Initial Erosion</span>
-                        <span class="text-center w-1/5">1989: Undue Burden</span>
-                        <span class="text-center w-1/5">2007: State Authority</span>
-                        <span class="text-right w-1/5">2025+: Post-Roe Era</span>
+                        <span class="text-left">1965: High Protection</span>
+                        <span class="text-center">1977: Initial Erosion</span>
+                        <span class="text-center">1989: Undue Burden</span>
+                        <span class="text-center">2007: State Authority</span>
+                        <span class="text-right">2025+: Post-Roe Era</span>
                     </div>
                 </div>
             </div>
@@ -170,7 +205,7 @@
             <h2 class="text-3xl font-bold text-center text-white mb-8">Chronological Timeline</h2>
             <div class="relative timeline-container py-8">
                 
-                <!-- 1965 -->
+                <!-- 1965: Griswold v. Connecticut -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1965</time>
@@ -183,7 +218,7 @@
                     </div>
                 </div>
 
-                <!-- 1972 -->
+                <!-- 1972: Eisenstadt v. Baird -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1972</time>
@@ -196,7 +231,7 @@
                     </div>
                 </div>
 
-                <!-- 1973 (Roe) -->
+                <!-- 1973: Roe v. Wade -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1973</time>
@@ -209,7 +244,7 @@
                     </div>
                 </div>
 
-                <!-- 1973 (Doe) -->
+                <!-- 1973: Doe v. Bolton -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1973</time>
@@ -222,7 +257,7 @@
                     </div>
                 </div>
 
-                <!-- 1976 (Danforth) -->
+                <!-- 1976: Planned Parenthood v. Danforth -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1976</time>
@@ -235,12 +270,12 @@
                     </div>
                 </div>
 
-                <!-- 1976 (Hyde Amendment) -->
+                <!-- 1976: Hyde Amendment (Regulation) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1976</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-overturn"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Hyde Amendment (Regulation)</h3>
                             <p class="text-sm mt-1 text-white">This legislative provision barred the use of federal funds (Medicaid) for most abortions.</p>
                             <p class="text-sm mt-1 text-cyan-200">This created a major financial barrier for low-income patients.</p>
@@ -248,12 +283,12 @@
                     </div>
                 </div>
 
-                <!-- 1977 (Maher v. Roe) -->
+                <!-- 1977: Maher v. Roe -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1977</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-overturn"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Maher v. Roe</h3>
                             <p class="text-sm mt-1 text-white">The Court ruled that states may deny Medicaid funding for most abortions.</p>
                             <p class="text-sm mt-1 text-cyan-200">This reduced access for low-income patients and distinguished state funding from the right to choose.</p>
@@ -261,20 +296,33 @@
                     </div>
                 </div>
                 
-                <!-- 1980 (Harris v. McRae) -->
+                <!-- 1979: Bellotti v. Baird (II) -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">1979</time>
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                            <h3 class="font-bold text-lg text-white">Bellotti v. Baird (II)</h3>
+                            <p class="text-sm mt-1 text-white">The Court struck down a parental consent requirement, but established that states could require parental consent or notification **if** a judicial bypass procedure was available.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This introduced a major hurdle for minors, allowing states to create new procedural barriers to access.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1980: Harris v. McRae -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1980</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Harris v. McRae</h3>
-                            <p class="text-sm mt-1 text-white">The Court upheld the Hyde Amendment's limits on federal funding for abortions.</p>
+                            <p class="text-sm mt-1 text-white">The Court upheld the <i>Hyde Amendment</i>'s limits on federal funding for abortions.</p>
                             <p class="text-sm mt-1 text-cyan-200">This confirmed a major financial barrier for low-income patients, following <i>Maher</i>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1983 -->
+                <!-- 1983: City of Akron v. Akron Center for Reproductive Health -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1983</time>
@@ -287,7 +335,7 @@
                     </div>
                 </div>
 
-                <!-- 1986 -->
+                <!-- 1986: Thornburgh v. American College of Obstetricians and Gynecologists -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1986</time>
@@ -299,8 +347,21 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 1989 -->
+                
+                <!-- 1988: Title X Gag Rule (Regulation) -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">1988</time>
+                        <div class="time-dot status-overturn"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
+                            <h3 class="font-bold text-lg text-white">Title X Gag Rule (Regulation)</h3>
+                            <p class="text-sm mt-1 text-white">Health and Human Services barred federally funded clinics from counseling patients about abortion.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This created a medical information void that disproportionately harmed people with less access.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 1989: Webster v. Reproductive Health Services -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1989</time>
@@ -313,25 +374,25 @@
                     </div>
                 </div>
 
-                <!-- 1991 -->
+                <!-- 1991: Rust v. Sullivan -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1991</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Rust v. Sullivan</h3>
-                            <p class="text-sm mt-1 text-white">The Court upheld the Title X counseling "gag rule."</p>
+                            <p class="text-sm mt-1 text-white">The Court upheld the Title X counseling gag rule.</p>
                             <p class="text-sm mt-1 text-cyan-200">This restricted the information that could be provided in low-income family planning clinics.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1992 -->
+                <!-- 1992: Planned Parenthood of Southeastern Pennsylvania v. Casey -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1992</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
                             <h3 class="font-bold text-lg text-white">Planned Parenthood of Southeastern Pennsylvania v. Casey</h3>
                             <p class="text-sm mt-1 text-white">The Court reaffirmed the core right but adopted the undue-burden test for state restrictions.</p>
                             <p class="text-sm mt-1 text-cyan-200">This preserved the core right to abortion but lowered the legal standard, making it significantly easier for states to pass restrictive laws.</p>
@@ -339,7 +400,7 @@
                     </div>
                 </div>
 
-                <!-- 1993 -->
+                <!-- 1993: Bray v. Alexandria Women's Health Clinic -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1993</time>
@@ -352,7 +413,20 @@
                     </div>
                 </div>
                 
-                <!-- 2000 -->
+                <!-- 1994: Freedom of Access to Clinic Entrances Act (FACE Act) -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">1994</time>
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                            <h3 class="font-bold text-lg text-white">Freedom of Access to Clinic Entrances Act (FACE Act)</h3>
+                            <p class="text-sm mt-1 text-white">Congress created a federal law making violence and threats against medical clinics a federal crime.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This was largely symbolic, since violence was already illegal and patients remained exposed to harassment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2000: Stenberg v. Carhart -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2000</time>
@@ -365,7 +439,7 @@
                     </div>
                 </div>
 
-                <!-- 2003 -->
+                <!-- 2003: Scheidler v. National Organization for Women -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2003</time>
@@ -378,7 +452,7 @@
                     </div>
                 </div>
 
-                <!-- 2006 (Scheidler v. NOW (III)) -->
+                <!-- 2006: Scheidler v. National Organization for Women (III) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2006</time>
@@ -391,7 +465,7 @@
                     </div>
                 </div>
 
-                <!-- 2006 (Ayotte) -->
+                <!-- 2006: Ayotte v. Planned Parenthood -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2006</time>
@@ -404,12 +478,12 @@
                     </div>
                 </div>
 
-                <!-- 2007 -->
+                <!-- 2007: Gonzales v. Carhart -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2007</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
                             <h3 class="font-bold text-lg text-white">Gonzales v. Carhart</h3>
                             <p class="text-sm mt-1 text-white">The Court upheld a federal ban on a specific procedure, even without an explicit health exception.</p>
                             <p class="text-sm mt-1 text-cyan-200">This increased judicial deference to legislatures, allowing the federal government to ban a procedure without including a health exception.</p>
@@ -417,7 +491,7 @@
                     </div>
                 </div>
 
-                <!-- 2014 (McCullen) -->
+                <!-- 2014: McCullen v. Coakley -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2014</time>
@@ -430,12 +504,12 @@
                     </div>
                 </div>
 
-                <!-- 2014 (Hobby Lobby) -->
+                <!-- 2014: Burwell v. Hobby Lobby Stores -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2014</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-overturn"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Burwell v. Hobby Lobby Stores</h3>
                             <p class="text-sm mt-1 text-white">The Religious Freedom Restoration Act was ruled to allow closely-held firms to refuse Affordable Care Act contraception coverage.</p>
                             <p class="text-sm mt-1 text-cyan-200">This reduced access to no-cost contraception for some workers by expanding religious exemptions.</p>
@@ -443,12 +517,12 @@
                     </div>
                 </div>
 
-                <!-- 2016 -->
+                <!-- 2016: Whole Woman’s Health v. Hellerstedt -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2016</time>
-                        <div class="time-dot status-strengthened"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
                             <h3 class="font-bold text-lg text-white">Whole Woman’s Health v. Hellerstedt</h3>
                             <p class="text-sm mt-1 text-white">The Court struck down Texas laws requiring admitting privileges at hospitals and ambulatory surgical center standards for clinics.</p>
                             <p class="text-sm mt-1 text-cyan-200">This reopened the path to challenge burdensome regulations and clarified the undue-burden test from <i>Casey</i>.</p>
@@ -456,12 +530,12 @@
                     </div>
                 </div>
 
-                <!-- 2018 -->
+                <!-- 2018: National Institute of Family and Life Advocates v. Becerra -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2018</time>
-                        <div class="time-dot status-stabilized"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">National Institute of Family and Life Advocates v. Becerra</h3>
                             <p class="text-sm mt-1 text-white">The Court barred compelled notices by crisis-pregnancy centers.</p>
                             <p class="text-sm mt-1 text-cyan-200">This weakened the tools used to mandate disclosure by crisis-pregnancy centers.</p>
@@ -469,7 +543,7 @@
                     </div>
                 </div>
 
-                <!-- 2019 -->
+                <!-- 2019: Box v. Planned Parenthood of Indiana and Kentucky -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2019</time>
@@ -482,12 +556,12 @@
                     </div>
                 </div>
 
-                <!-- 2020 (June Medical v. Russo) -->
+                <!-- 2020: June Medical Services L.L.C. v. Russo -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2020</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
                             <h3 class="font-bold text-lg text-white">June Medical Services L.L.C. v. Russo</h3>
                             <p class="text-sm mt-1 text-white">The Court struck down a Louisiana admitting-privileges law, but the majority was fractured on its methodology.</p>
                             <p class="text-sm mt-1 text-cyan-200">This temporarily preserved access, but the narrow legal reasoning signaled increasing judicial tolerance for restrictive state laws.</p>
@@ -495,7 +569,7 @@
                     </div>
                 </div>
                 
-                <!-- 2020 (Little Sisters) -->
+                <!-- 2020: Little Sisters of the Poor Saints Peter and Paul Home v. Pennsylvania -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2020</time>
@@ -508,20 +582,20 @@
                     </div>
                 </div>
 
-                <!-- 2021 -->
+                <!-- 2021: Whole Woman’s Health v. Jackson -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2021</time>
-                        <div class="time-dot status-chip"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                        <div class="time-dot status-overturn"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Whole Woman’s Health v. Jackson</h3>
                             <p class="text-sm mt-1 text-white">The Court allowed only a narrow pre-enforcement suit against Texas Senate Bill 8, and the law largely remained in effect.</p>
                             <p class="text-sm mt-1 text-cyan-200">The law effectively ceased in-state abortion access pre-<i>Dobbs</i> and tolerated aggressive state legal design.</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 2022 (Dobbs) -->
+
+                <!-- 2022: Dobbs v. Jackson Women's Health Organization -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2022</time>
@@ -534,41 +608,80 @@
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Court Cases) -->
+                <!-- 2022: DOJ OLC Opinion on Comstock Act -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
-                        <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
+                        <time class="font-bold text-xl text-cyan-300">2022</time>
+                        <div class="time-dot status-strengthened"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
+                            <h3 class="font-bold text-lg text-white">DOJ OLC Opinion on Comstock Act</h3>
+                            <p class="text-sm mt-1 text-white">The Justice Department said mailing abortion pills is not illegal absent unlawful intent.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This protected nationwide distribution of mifepristone and misoprostol.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024: FDA v. Alliance for Hippocratic Medicine -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">2024</time>
+                        <div class="time-dot status-stabilized"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                            <h3 class="font-bold text-lg text-white">FDA v. Alliance for Hippocratic Medicine</h3>
+                            <p class="text-sm mt-1 text-white">The Supreme Court dismissed challenges to FDA’s approval of mifepristone for lack of standing.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This preserved national access to medication abortion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024: Moyle v. US (EMTALA) -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">2024</time>
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
+                            <h3 class="font-bold text-lg text-white">Moyle v. United States (EMTALA)</h3>
+                            <p class="text-sm mt-1 text-white">The Supreme Court ruled on the conflict between state abortion bans and the Emergency Medical Treatment and Active Labor Act (EMTALA), temporarily protecting emergency abortion care under federal law.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This provided a temporary federal shield for providers offering life-saving or stabilizing abortion care in states with strict bans.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023–2025+: Post-Roe: Court Cases -->
+                <div class="timeline-item mb-8">
+                    <div class="timeline-content flex flex-col items-start">
+                        <time class="font-bold text-xl text-cyan-300">2023–2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Court Cases</h3>
-                            <p class="text-sm mt-1 text-white">Major conflicts in the courts focus on medication abortion access (challenging Federal Drug Administration authority over mifepristone) and states attempting to criminalize or restrict interstate travel for care.</p>
-                            <p class="text-sm mt-1 text-cyan-200">The battle centers on federal authority versus interstate commerce conflicts.</p>
+                            <p class="text-sm mt-1 text-white">Conflicts center on medication abortion access and attempts to criminalize or restrict interstate travel.</p>
+                            <p class="text-sm mt-1 text-cyan-200">The battle pits federal authority against state bans.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Regulation) -->
+                <!-- 2023–2025+: Post-Roe: Regulations -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
-                        <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
+                        <time class="font-bold text-xl text-cyan-300">2023–2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Regulations</h3>
-                            <p class="text-sm mt-1 text-white">Conservative states enact shield laws to block providers from complying with anti-abortion states' legal requests, while others attempt to impose novel restrictions on telehealth and mail-order abortion pills.</p>
-                            <p class="text-sm mt-1 text-cyan-200">The US Postal Service is also a point of contention regarding delivery of mifepristone and misoprostol.</p>
+                            <p class="text-sm mt-1 text-white">Supportive states enact shield laws to protect providers, while hostile states push telehealth and pill restrictions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">The USPS and interstate disputes remain contested ground.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Health Crisis) -->
+                <!-- 2023–2025+: Post-Roe: Public Health Crises -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
-                        <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
+                        <time class="font-bold text-xl text-cyan-300">2023–2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Public Health Crises</h3>
-                            <p class="text-sm mt-1 text-white">The US, which already faces the highest maternal mortality rate among wealthy nations, sees this crisis worsen as restrictions take effect. Legal constraints mean emergency care is delayed or denied for patients.</p>
-                            <p class="text-sm mt-1 text-cyan-200">The situation exacerbates risks for vulnerable populations, including victims of sexual assault, and minors, who may be legally compelled to carry non-viable or high-risk pregnancies, creating profound physical and mental health traumas.</p>
+                            <p class="text-sm mt-1 text-white">Maternal mortality worsens as restrictions delay or deny emergency care.</p>
+                            <p class="text-sm mt-1 text-cyan-200">Vulnerable groups face heightened physical and mental health risks.</p>
                         </div>
                     </div>
                 </div>
