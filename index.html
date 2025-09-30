@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE ahtml>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Hope to Hostility: A 60-Year Legal Shift</title>
+    <title>From Hope to Hostility: A 60-Year Legal Shift in Abortion Access</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,11 @@
             font-family: 'Inter', sans-serif;
             background-color: #0B3954; /* Dark Blue */
             color: #BFD7EA; /* Light Cyan */
+        }
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         .timeline-container::before {
             content: '';
@@ -52,10 +57,6 @@
                 padding-left: 40px;
                 padding-right: 2rem;
             }
-            .timeline-item:nth-child(odd)::before {
-                left: 50%;
-                margin-left: -10px;
-            }
             .timeline-item:nth-child(odd) .timeline-content {
                 align-items: flex-end;
             }
@@ -79,13 +80,11 @@
             }
         }
 
-        /* Status Colors for Timeline Boxes - Now Four Colors to match the gradient */
+        /* Status Colors for Timeline Boxes */
         .box-base-style {
             background-color: #1A202C; /* Solid, dark slate/near-black */
-            /* Custom shadow for extra pop */
             box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 5px 15px -5px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            /* Enforce thicker border for status colors */
             border-left-width: 8px; 
             border-left-style: solid;
         }
@@ -120,9 +119,8 @@
 
         /* Custom Styles for the Smooth Gradient Map */
         .climate-gradient {
-            /* Defines the smooth, multi-stop gradient for the temperature map */
             background: linear-gradient(to right,
-                #28a745 0%,      /* 1965: Strong Green Start */
+                #28a745 0%,      /* Strong Green Start */
                 #28a745 15%,     /* Strong Protection */
                 #ffc107 25%,     /* Transition to Yellow/Financial Erosion */
                 #ffc107 35%,     /* Stabilization/Yellow */
@@ -130,7 +128,7 @@
                 #fd7e14 75%,     /* Orange/Erosion */
                 #ffc107 85%,     /* Mixed/Brief Defense */
                 #dc3545 90%,     /* Rapid Transition to Red/Collapse */
-                #dc3545 100%     /* 2025+: Hostile Red End */
+                #dc3545 100%     /* Hostile Red End */
             );
         }
         .w-17 { width: 17%; } .w-8 { width: 8%; } .w-15 { width: 15%; } .w-30 { width: 30%; } .w-7 { width: 7%; }
@@ -141,27 +139,24 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-4">From Hope to Hostility: A 60-Year Legal Shift</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-cyan-200">A detailed legal chronology of 29 key cases and regulations that shaped, eroded, and ultimately overturned the constitutional right to abortion.</p>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-4">From Hope to Hostility: A 60-Year Legal Shift in Abortion Access</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-cyan-200">A detailed legal chronology of key court cases, federal regulations and other events that shaped, eroded, and ultimately overturned one's Constitutional right to abortion care.</p>
         </header>
 
         <section class="mb-16">
-            <!-- Updated background color and stronger shadow for consistency -->
             <div class="max-w-4xl mx-auto bg-[#1A202C] rounded-xl shadow-2xl p-6 md:p-8">
                 <h2 class="text-3xl font-bold text-white text-center mb-4">Legal Climate Temperature Map</h2>
-                <p class="text-center mb-8 text-lg text-cyan-300">Visualizing the volatility of legal protection, from initial establishment to the current hostile post-Roe era.</p>
+                <p class="text-center mb-8 text-lg text-cyan-300">Visualizing the volatility of legal protections, establishment, and current hostility against bodily autonomy after <span class="font-bold">Roe v. Wade</span> was overturned.</p>
                 
                 <div class="w-full flex flex-col items-center justify-center h-full">
-                    <!-- Legal Climate Gradient Bar with Smooth CSS Gradient -->
                     <div class="w-full max-w-4xl h-8 rounded-full overflow-hidden flex shadow-2xl climate-gradient">
-                        <!-- The entire bar is now handled by the CSS linear-gradient -->
                     </div>
                     <!-- Year Markers (Positioned to align with key shifts) -->
                     <div class="flex w-full max-w-4xl justify-between mt-2 text-xs sm:text-sm text-cyan-300 font-semibold">
                         <span class="text-left w-1/5">1965: High Protection</span>
                         <span class="text-center w-1/5">1977: Initial Erosion</span>
-                        <span class="text-center w-1/5">1989: Undue Burden Era</span>
-                        <span class="text-center w-1/5">2007: Increased Deference</span>
+                        <span class="text-center w-1/5">1989: Undue Burden</span>
+                        <span class="text-center w-1/5">2007: State Authority</span>
                         <span class="text-right w-1/5">2025+: Post-Roe Era</span>
                     </div>
                 </div>
@@ -179,8 +174,8 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Griswold v. Connecticut</h3>
-                            <p class="text-sm mt-1 text-white">Recognized marital privacy for contraception.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Laid constitutional privacy groundwork for <i>Roe</i>.</p>
+                            <p class="text-sm mt-1 text-white">The Court recognized a right to marital privacy for contraception use.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This laid the constitutional privacy groundwork for the later <i>Roe</i> decision.</p>
                         </div>
                     </div>
                 </div>
@@ -192,8 +187,8 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Eisenstadt v. Baird</h3>
-                            <p class="text-sm mt-1 text-white">Extended contraception rights to individuals (including unmarried).</p>
-                            <p class="text-sm mt-1 text-cyan-200">Expanded autonomy principle, building on <i>Griswold</i>.</p>
+                            <p class="text-sm mt-1 text-white">Contraception rights were extended to individuals, including unmarried persons.</p>
+                            <p class="text-sm mt-1 text-cyan-200">The ruling expanded the principle of bodily autonomy, building on <i>Griswold</i>.</p>
                         </div>
                     </div>
                 </div>
@@ -205,8 +200,8 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Roe v. Wade</h3>
-                            <p class="text-sm mt-1 text-white">Recognized pre-viability abortion right; established trimester framework.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Nationwide legalization before viability.</p>
+                            <p class="text-sm mt-1 text-white">The Court recognized a constitutional right to pre-viability abortion and established the trimester framework.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This established nationwide legalization before viability.</p>
                         </div>
                     </div>
                 </div>
@@ -218,8 +213,8 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Doe v. Bolton</h3>
-                            <p class="text-sm mt-1 text-white">Broad health exception; struck procedural hurdles.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Expanded practical access; reinforced <i>Roe</i>.</p>
+                            <p class="text-sm mt-1 text-white">The ruling established a broad health exception and struck down procedural hurdles to access.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This expanded practical access to care and reinforced <i>Roe</i>.</p>
                         </div>
                     </div>
                 </div>
@@ -231,47 +226,47 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Planned Parenthood v. Danforth</h3>
-                            <p class="text-sm mt-1 text-white">Struck down spousal consent; limits on parental consent.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Protected decisional autonomy.</p>
+                            <p class="text-sm mt-1 text-white">The Court struck down spousal consent requirements and limited blanket parental consent for minors.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This protected patient decisional autonomy.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1976 (Hyde Amendment) - Yellow/Stabilized (Financial) -->
+                <!-- 1976 (Hyde Amendment) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1976</time>
-                        <div class="time-dot status-stabilized"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Hyde Amendment (Regulation)</h3>
-                            <p class="text-sm mt-1 text-white">Legislative provision barring federal funds (Medicaid) for most abortions.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Created a major financial barrier for low-income patients (chipping away at access).</p>
+                            <p class="text-sm mt-1 text-white">This legislative provision barred the use of federal funds (Medicaid) for most abortions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This created a major financial barrier for low-income patients.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1977 (Maher v. Roe) - Yellow/Stabilized (Financial) -->
+                <!-- 1977 (Maher v. Roe) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1977</time>
-                        <div class="time-dot status-stabilized"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Maher v. Roe</h3>
-                            <p class="text-sm mt-1 text-white">States may deny Medicaid funding for most abortions.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Reduced access for low-income patients; distinguished funding from the right (chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court ruled that states may deny Medicaid funding for most abortions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This reduced access for low-income patients and distinguished state funding from the right to choose.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 1980 (Harris v. McRae) - Yellow/Stabilized (Financial) -->
+                <!-- 1980 (Harris v. McRae) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1980</time>
-                        <div class="time-dot status-stabilized"></div>
-                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
+                        <div class="time-dot status-chip"></div>
+                        <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Harris v. McRae</h3>
-                            <p class="text-sm mt-1 text-white">Upheld Hyde Amendment Medicaid limits.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Confirmed a major financial barrier for poor patients; followed <i>Maher</i> (chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court upheld the Hyde Amendment's limits on federal funding for abortions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This confirmed a major financial barrier for low-income patients, following <i>Maher</i>.</p>
                         </div>
                     </div>
                 </div>
@@ -282,9 +277,9 @@
                         <time class="font-bold text-xl text-cyan-300">1983</time>
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
-                            <h3 class="font-bold text-lg text-white">City of Akron v. Akron CRH</h3>
-                            <p class="text-sm mt-1 text-white">Struck down consent/waiting/hospital rules as inconsistent with Roe.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Shielded access from burdensome regulations; reaffirmed <i>Roe</i>.</p>
+                            <h3 class="font-bold text-lg text-white">City of Akron v. Akron Center for Reproductive Health</h3>
+                            <p class="text-sm mt-1 text-white">The Court struck down various consent, waiting period, and hospital rules as inconsistent with <i>Roe</i>.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This shielded access from burdensome regulations and reaffirmed <i>Roe</i>.</p>
                         </div>
                     </div>
                 </div>
@@ -295,61 +290,61 @@
                         <time class="font-bold text-xl text-cyan-300">1986</time>
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
-                            <h3 class="font-bold text-lg text-white">Thornburgh v. ACOG</h3>
-                            <p class="text-sm mt-1 text-white">Invalidated PA informed-consent/reporting mandates.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Block to deterrent provisions; reaffirmed <i>Roe</i>.</p>
+                            <h3 class="font-bold text-lg text-white">Thornburgh v. American College of Obstetricians and Gynecologists</h3>
+                            <p class="text-sm mt-1 text-white">The Court invalidated Pennsylvania informed-consent and reporting mandates.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This blocked provisions designed to deter patients and reaffirmed <i>Roe</i>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1989 - Orange/Structural -->
+                <!-- 1989 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1989</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Webster v. RHS</h3>
-                            <p class="text-sm mt-1 text-white">Allowed 20-week viability testing; barred public funds/facilities.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Expanded state leeway without overruling Roe; limited <i>Roe</i> (chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Webster v. Reproductive Health Services</h3>
+                            <p class="text-sm mt-1 text-white">The Court allowed 20-week viability testing and barred public funds or facilities from being used for abortions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This expanded state leeway without overruling <i>Roe</i>, limiting the decision's scope.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1991 - Orange/Structural (Adjacent) -->
+                <!-- 1991 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1991</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Rust v. Sullivan</h3>
-                            <p class="text-sm mt-1 text-white">Upheld Title X counseling "gag rule."</p>
-                            <p class="text-sm mt-1 text-cyan-200">Restricted information in low-income clinics; adjacent chipping (did not alter the right itself).</p>
+                            <p class="text-sm mt-1 text-white">The Court upheld the Title X counseling "gag rule."</p>
+                            <p class="text-sm mt-1 text-cyan-200">This restricted the information that could be provided in low-income family planning clinics.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1992 - Orange/Structural (Major Shift to Undue Burden) -->
+                <!-- 1992 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1992</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Planned Parenthood v. Casey</h3>
-                            <p class="text-sm mt-1 text-white">Reaffirmed core but adopted undue-burden test.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Preserved the right but made regulation much easier, severely narrowing <i>Roe</i> (chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Planned Parenthood of Southeastern Pennsylvania v. Casey</h3>
+                            <p class="text-sm mt-1 text-white">The Court reaffirmed the core right but adopted the undue-burden test for state restrictions.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This preserved the core right to abortion but lowered the legal standard, making it significantly easier for states to pass restrictive laws.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1993 - Orange/Structural (Adjacent) -->
+                <!-- 1993 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">1993</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Bray v. Alexandria WHC</h3>
-                            <p class="text-sm mt-1 text-white">No conspiracy claim for clinic blockades based on anti-abortion animus.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Weakened federal civil-rights remedies against obstruction (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Bray v. Alexandria Women's Health Clinic</h3>
+                            <p class="text-sm mt-1 text-white">The Court ruled that clinic blockades based on anti-abortion animus did not qualify as a conspiracy under the relevant statute.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This weakened the availability of federal civil-rights remedies against clinic obstruction.</p>
                         </div>
                     </div>
                 </div>
@@ -361,86 +356,86 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Stenberg v. Carhart</h3>
-                            <p class="text-sm mt-1 text-white">Struck down state "partial-birth" ban lacking health exception.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Protected providers/patients; applied <i>Casey</i>.</p>
+                            <p class="text-sm mt-1 text-white">The Court struck down a state ban on a specific abortion procedure because it lacked an exception for the health of the mother.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This protected providers and patients and applied the principles of <i>Casey</i>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2003 - Orange/Structural (Adjacent) -->
+                <!-- 2003 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2003</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Scheidler v. NOW</h3>
-                            <p class="text-sm mt-1 text-white">Protest conduct was not "extortion" under Hobbs Act.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Reduced RICO leverage against clinic obstruction (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Scheidler v. National Organization for Women</h3>
+                            <p class="text-sm mt-1 text-white">The Court ruled that protest conduct did not constitute "extortion" under the Hobbs Act.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This reduced the ability to use the Racketeer Influenced and Corrupt Organizations Act (RICO) against clinic obstruction.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2006 (Scheidler v. NOW (III)) - Orange/Structural (Adjacent) -->
+                <!-- 2006 (Scheidler v. NOW (III)) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2006</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Scheidler v. NOW</h3>
-                            <p class="text-sm mt-1 text-white">Reaffirmed no RICO/Hobbs route on same theory.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Further limited anti-obstruction tools (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Scheidler v. National Organization for Women</h3>
+                            <p class="text-sm mt-1 text-white">The Court reaffirmed that the same theory could not be used under RICO or the Hobbs Act.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This further limited the tools available to prevent clinic obstruction.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2006 (Ayotte) - Orange/Structural (Adjacent) -->
+                <!-- 2006 (Ayotte) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2006</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Ayotte v. Planned Parenthood</h3>
-                            <p class="text-sm mt-1 text-white">Instructed narrow remedies to salvage parental-notice law.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Encouraged minimalism, allowing more restrictive laws to survive (adjacent chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court instructed lower courts to narrowly remedy issues to salvage a parental-notice law.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This encouraged minimalist remedies, allowing more restrictive state laws to survive challenges.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2007 - Orange/Structural (Critical Shift - Increased Deference) -->
+                <!-- 2007 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2007</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Gonzales v. Carhart</h3>
-                            <p class="text-sm mt-1 text-white">Upheld federal PBA ban without health exception.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Increased deference to legislatures; severely narrowed <i>Stenberg</i> (chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court upheld a federal ban on a specific procedure, even without an explicit health exception.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This increased judicial deference to legislatures, allowing the federal government to ban a procedure without including a health exception.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2014 (McCullen) - Orange/Structural (Adjacent) -->
+                <!-- 2014 (McCullen) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2014</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">McCullen v. Coakley</h3>
-                            <p class="text-sm mt-1 text-white">Struck 35-ft clinic buffer zones on 1A grounds.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Harder to manage protests at clinics (adjacent chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court struck down 35-foot clinic buffer zones on First Amendment grounds.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This made it more difficult for clinics to manage protests and ensure patient access.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2014 (Hobby Lobby) - Orange/Structural (Adjacent, Religious Exemptions) -->
+                <!-- 2014 (Hobby Lobby) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2014</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Burwell v. Hobby Lobby</h3>
-                            <p class="text-sm mt-1 text-white">RFRA allowed closely-held firms to refuse ACA contraception coverage.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Reduced no-cost contraception for some workers; expanded religious exemptions (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Burwell v. Hobby Lobby Stores</h3>
+                            <p class="text-sm mt-1 text-white">The Religious Freedom Restoration Act was ruled to allow closely-held firms to refuse Affordable Care Act contraception coverage.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This reduced access to no-cost contraception for some workers by expanding religious exemptions.</p>
                         </div>
                     </div>
                 </div>
@@ -452,125 +447,125 @@
                         <div class="time-dot status-strengthened"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-strengthened box-base-style">
                             <h3 class="font-bold text-lg text-white">Whole Woman’s Health v. Hellerstedt</h3>
-                            <p class="text-sm mt-1 text-white">Struck TX admitting-privileges/ASC rules.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Reopened path to challenge burdensome regulations; clarified <i>Casey</i> (strengthening).</p>
+                            <p class="text-sm mt-1 text-white">The Court struck down Texas laws requiring admitting privileges at hospitals and ambulatory surgical center standards for clinics.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This reopened the path to challenge burdensome regulations and clarified the undue-burden test from <i>Casey</i>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2018 (NIFLA v. Becerra) - Now Yellow/Stabilized (Ancillary Chipping) -->
+                <!-- 2018 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2018</time>
                         <div class="time-dot status-stabilized"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
-                            <h3 class="font-bold text-lg text-white">NIFLA v. Becerra</h3>
-                            <p class="text-sm mt-1 text-white">Barred compelled notices by crisis-pregnancy centers.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Weakened pro-access disclosure tools (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">National Institute of Family and Life Advocates v. Becerra</h3>
+                            <p class="text-sm mt-1 text-white">The Court barred compelled notices by crisis-pregnancy centers.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This weakened the tools used to mandate disclosure by crisis-pregnancy centers.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2019 (Box v. Planned Parenthood) - Now Yellow/Stabilized (Ancillary Chipping) -->
+                <!-- 2019 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2019</time>
                         <div class="time-dot status-stabilized"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-stabilized box-base-style">
-                            <h3 class="font-bold text-lg text-white">Box v. Planned Parenthood</h3>
-                            <p class="text-sm mt-1 text-white">Upheld fetal-remains rule; did not reach "reason-based" ban.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Validated ancillary regulatory terrain (chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Box v. Planned Parenthood of Indiana and Kentucky</h3>
+                            <p class="text-sm mt-1 text-white">The Court upheld Indiana's law regarding the disposal of fetal remains but did not reach the core issue of a "reason-based" ban.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This validated the state's ancillary regulation on fetal remains.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2020 (June Medical v. Russo) - Orange/Structural (Critical shift signal) -->
+                <!-- 2020 (June Medical v. Russo) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2020</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">June Medical v. Russo</h3>
-                            <p class="text-sm mt-1 text-white">Struck LA admitting-privileges law; fractured methodology.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Preserved access temporarily, but Roberts' concurrence narrowed reasoning (chipping).</p>
+                            <h3 class="font-bold text-lg text-white">June Medical Services L.L.C. v. Russo</h3>
+                            <p class="text-sm mt-1 text-white">The Court struck down a Louisiana admitting-privileges law, but the majority was fractured on its methodology.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This temporarily preserved access, but the narrow legal reasoning signaled increasing judicial tolerance for restrictive state laws.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 2020 (Little Sisters) - Orange/Structural (Adjacent, Religious Exemptions) -->
+                <!-- 2020 (Little Sisters) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2020</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
-                            <h3 class="font-bold text-lg text-white">Little Sisters v. Pennsylvania</h3>
-                            <p class="text-sm mt-1 text-white">Upheld broad religious/moral exemptions to contraception mandate.</p>
-                            <p class="text-sm mt-1 text-cyan-200">More employer opt-outs, shifting costs to workers; extended <i>Hobby Lobby</i> (adjacent chipping).</p>
+                            <h3 class="font-bold text-lg text-white">Little Sisters of the Poor Saints Peter and Paul Home v. Pennsylvania</h3>
+                            <p class="text-sm mt-1 text-white">The Court upheld broad religious and moral exemptions to the Affordable Care Act's contraception mandate.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This allowed more employer opt-outs from the mandate, extending the <i>Hobby Lobby</i> ruling.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2021 (SB 8) - Orange/Structural (Critical shift, procedural abuse) -->
+                <!-- 2021 -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2021</time>
                         <div class="time-dot status-chip"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-chip box-base-style">
                             <h3 class="font-bold text-lg text-white">Whole Woman’s Health v. Jackson</h3>
-                            <p class="text-sm mt-1 text-white">Allowed only narrow pre-enforcement suit; law largely operated.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Near-total cessation in-state pre-<i>Dobbs</i>; tolerated aggressive state design (chipping).</p>
+                            <p class="text-sm mt-1 text-white">The Court allowed only a narrow pre-enforcement suit against Texas Senate Bill 8, and the law largely remained in effect.</p>
+                            <p class="text-sm mt-1 text-cyan-200">The law effectively ceased in-state abortion access pre-<i>Dobbs</i> and tolerated aggressive state legal design.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 2022 (Dobbs) - Red/Overturn -->
+                <!-- 2022 (Dobbs) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2022</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
-                            <h3 class="font-bold text-lg text-white">Dobbs v. Jackson Women's Health</h3>
-                            <p class="text-sm mt-1 text-white">Constitution confers no abortion right; overruled <i>Roe</i> & <i>Casey</i>.</p>
-                            <p class="text-sm mt-1 text-cyan-200">Returned regulation to states; trigger bans took effect (OVERTURN).</p>
+                            <h3 class="font-bold text-lg text-white">Dobbs v. Jackson Women's Health Organization</h3>
+                            <p class="text-sm mt-1 text-white">The Supreme Court ruled that the Constitution confers no abortion right and explicitly overruled <i>Roe v. Wade</i> and <i>Planned Parenthood v. Casey</i>.</p>
+                            <p class="text-sm mt-1 text-cyan-200">This returned all regulation of abortion to the states, causing trigger bans to take immediate effect.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Court Cases) - Red/Overturn -->
+                <!-- 2023-2025+ (Court Cases) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Court Cases</h3>
-                            <p class="text-sm mt-1 text-white">Major conflicts in the courts focus on medication abortion access (challenging <b>FDA</b> authority over <b>mifepristone</b>) and states attempting to criminalize or restrict <b>interstate travel</b> for care.</p>
+                            <p class="text-sm mt-1 text-white">Major conflicts in the courts focus on medication abortion access (challenging Federal Drug Administration authority over mifepristone) and states attempting to criminalize or restrict interstate travel for care.</p>
                             <p class="text-sm mt-1 text-cyan-200">The battle centers on federal authority versus interstate commerce conflicts.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Regulation) - Red/Overturn -->
+                <!-- 2023-2025+ (Regulation) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Regulations</h3>
-                            <p class="text-sm mt-1 text-white">Conservative states enact <b>shield laws</b> to block providers from complying with anti-abortion states' legal requests, while others attempt to impose novel restrictions on <b>telehealth</b> and <b>mail-order</b> abortion pills.</p>
+                            <p class="text-sm mt-1 text-white">Conservative states enact shield laws to block providers from complying with anti-abortion states' legal requests, while others attempt to impose novel restrictions on telehealth and mail-order abortion pills.</p>
                             <p class="text-sm mt-1 text-cyan-200">The US Postal Service is also a point of contention regarding delivery of mifepristone and misoprostol.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023-2025+ (Health Crisis) - Red/Overturn -->
+                <!-- 2023-2025+ (Health Crisis) -->
                 <div class="timeline-item mb-8">
                     <div class="timeline-content flex flex-col items-start">
                         <time class="font-bold text-xl text-cyan-300">2023-2025+</time>
                         <div class="time-dot status-overturn"></div>
                         <div class="mt-3 w-full rounded-lg shadow-xl p-4 status-overturn box-base-style">
                             <h3 class="font-bold text-lg text-white">Post-Roe: Public Health Crises</h3>
-                            <p class="text-sm mt-1 text-white">The US, which already faces the highest <b>maternal mortality</b> rate among wealthy nations, sees this crisis worsen as restrictions take effect. Legal constraints mean <b>emergency care is delayed or denied</b> for patients.</p>
-                            <p class="text-sm mt-1 text-cyan-200">The situation exacerbates risks for <b>vulnerable populations</b>, including victims of <b>sexual assault</b>, and <b>minors</b>, who may be legally compelled to carry <b>non-viable</b> or <b>high-risk</b> pregnancies, creating profound physical and mental health traumas.</p>
+                            <p class="text-sm mt-1 text-white">The US, which already faces the highest maternal mortality rate among wealthy nations, sees this crisis worsen as restrictions take effect. Legal constraints mean emergency care is delayed or denied for patients.</p>
+                            <p class="text-sm mt-1 text-cyan-200">The situation exacerbates risks for vulnerable populations, including victims of sexual assault, and minors, who may be legally compelled to carry non-viable or high-risk pregnancies, creating profound physical and mental health traumas.</p>
                         </div>
                     </div>
                 </div>
